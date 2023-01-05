@@ -1,0 +1,44 @@
+h2{
+    text-align: center;
+}
+
+.container{
+
+    margin-bottom: 30px;
+}
+
+.myform, .roomAddress{
+    width: 50%;
+    
+}
+
+input{
+    width: 70%;
+    font-size: 20px;
+}
+
+button{
+    background-color: rgb(255, 235, 183);
+    width: 90px;
+    color: 	black;
+    border-radius: 8px;
+    transition: ease 0.5s;
+}
+
+button:hover{
+    background-color: rgb(173, 142, 112);
+    color: white;
+}
+
+.results{
+    font-size: 20px;
+    background-color: bisque;
+    cursor: pointer;
+    margin: 10px;
+    width: 80%;
+}
+
+.results.hover{
+    background-color: black;
+    color: white;
+}

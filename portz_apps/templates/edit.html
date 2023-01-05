@@ -1,0 +1,29 @@
+{% load static %}
+{% include 'navbar.html'%}
+{% block content %}
+
+<h3 class="alert alert-warning text-center">Pendataan Pelabuhan Perikanan</h3>
+<div class="container">
+
+    <!-- forms -->
+    <div class="row">
+        <div class="col col-8 offset-2">
+
+          {% if pesan%}
+          <script>
+              swal("Berhasil", "{{ pesan }}", "success");
+          </script>
+          {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Simpan" class="btn btn-primary">
+        <a href="/home" class="btn btn-warning">Kembali</a>
+    </form>
+</div>
+</div>
+</div>
+<br>
+{% endblock content%}
+

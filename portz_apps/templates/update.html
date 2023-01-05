@@ -1,0 +1,72 @@
+{% load static %}
+{% include 'navbar.html'%}
+{% block content %}
+
+<h3 class="alert alert-warning text-center">Pendataan Pelabuhan Perikanan</h3>
+<div class="container">
+
+    <!-- forms -->
+    <div class="row">
+        <div class="col col-8 offset-2">
+
+          {% if pesan%}
+          <script>
+              swal("Berhasil", "{{ pesan }}", "success");
+          </script>
+          {% endif %}
+
+    <form method="post">
+      <p style="margin-left: 5px; color: red;">*) Semua data akan tersimpan secara otomatis pada halaman admin</p>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Simpan" class="btn btn-primary">
+        <a href="/home" class="btn btn-warning">Kembali</a>
+    </form>
+</div>
+</div>
+</div>
+<br>
+
+<!-- <h3 class="alert alert-warning text-center">Tabel Pelabuhan Perikanan</h3>
+<br>
+    <div class="container-fluid">
+      <table class="table table-bordered border-dark CSS-no">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align: center;">No</th>
+              <th scope="col" style="text-align: center;">Nama Pelabuhan</th>
+              <th scope="col" style="text-align: center;">Alamat</th>
+              <th scope="col" style="text-align: center;">WPP</th>
+              <th scope="col" style="text-align: center;">Provinsi</th>
+              <th scope="col" style="text-align: center;">Golongan</th>
+              <th scope="col" style="text-align: center;">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+  
+          {% for i in data %}
+      
+            <tr>
+              <td style="text-align: center;">{{ i.id }}</td>
+              <td style="text-align: center;">{{ i.nama }}</td>
+              <td style="text-align: center;">{{ i.alamat}}</td>
+              <td style="text-align: center;">{{ i.wpp }}</td>
+              <td style="text-align: center;">{{ i.provinsi }}</td>
+              <td style="text-align: center;">{{ i.golongan }}</td>
+              <td style="text-align: center;">
+                
+                <a href="{% url 'edit' i.id %}"><i class="bx bx-edit"></i></a>
+                
+                <form action="{% url 'delete' i.id %}" method="post" class="d-inline">
+                  {% csrf_token %}
+                  <button type="submit">
+                    <i class="bx bx-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr> 
+          {% endfor %}  
+          </tbody>
+      </table>
+    </div> -->
+{% endblock content%}

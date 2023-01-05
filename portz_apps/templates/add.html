@@ -1,0 +1,84 @@
+{% load static %}
+{% include 'navbar.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Lokasi Pelabuhan</title>
+    <!-- <link rel="stylesheet" href="{% static 'portz/css/style.css' %}"> -->
+</head>
+<body>
+    <!-- <h3 class="alert alert-warning text-center">Pendataan Peta Pelabuhan Perikanan</h3>
+<div class="container">
+    <div class="myform">
+        <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+            <div>
+                <p>Nama Lokasi</p>
+                {{form.name}}
+            </div>
+            <div>
+                <p>Deskripsi Lokasi</p>
+                {{form.desc}}
+            </div>
+            <div>
+                <p>Provinsi</p>
+                {{form.prov}}
+            </div>
+            <div>
+                <p>Gambar</p>
+                {{form.pict}}
+            </div> 
+            <div>
+                <p></p>
+                <a href=""><button>Simpan</button></a>
+                <a href="/home"><button>Kembali</button></a>
+            </div>
+        </form>
+    </div>
+    <div class="roomAddress">
+        <div>
+            <input type="text" id="address">   
+        </div>
+        <div>
+            <button onclick="findAddresses()">Cari</button>
+        </div>
+        <div id="addresses">
+        </div>
+    </div> 
+    <br>
+</div> -->
+
+<div class="">
+    <h3 class="alert alert-warning text-center">Pendataan Peta Pelabuhan</h3>
+</div>
+<div class="container">
+    <!-- forms -->
+    <p style="margin-left: 5px; color: red;">*) Semua data akan tersimpan secara otomatis pada halaman admin</p>
+    <p style="margin-left: 5px; color: red;">*) Kolom deskripsi silakan isi dengan <b>titik koordinat lokasi!</b></p>
+    <div class="row">
+    
+        <div class="col col-8 offset-1">
+
+          {% if pesan%}
+          <script>
+              swal("Berhasil", "{{ pesan }}", "success");
+          </script>
+          {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Simpan" class="btn btn-primary">
+        <a href="/home" class="btn btn-warning">Kembali</a>
+    </form>
+</div>
+</div>
+</div>
+<br>
+    <script type="text/javascript" src="{% static 'portz/js/app.js' %}"></script>
+</body>
+</html>
